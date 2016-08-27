@@ -1,6 +1,6 @@
 # DotA :: Prolog mode
 
-This is something I've been working on, on-and-off, for a couple of years. Prolog has always been interesting to me due to it's declarative nature, which most of us with our imperative programming jobs don't get exposed to. It's a nice departure from the ordinary, simple shenanigans of working with C/C++.
+This is something I've been working on, on-and-off, over the past couple of years. Prolog has always been interesting to me due to it's declarative nature, which most of us with our imperative programming jobs don't get exposed to. It's a nice departure from the ordinary, (relatively) simple shenanigans of working with C/C++.
 
 # Starting Prolog
 
