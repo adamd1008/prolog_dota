@@ -118,7 +118,7 @@ build_contains_recipe2(X, [recipe(X)| _T]).
 build_contains_recipe2(X, [_H| T]) :-
    build_contains_recipe2(X, T), !.
 
-build(wards, [observerWards, sentryWards]).
+build(wards, [observerWard, sentryWard]).
 
 % Common
 build(magicWand, [magicStick, ironBranch, ironBranch, circlet]).
@@ -148,11 +148,9 @@ build(tranquilBoots, [bootsOfSpeed, ringOfProtection, ringOfRegen]).
 build(ringOfAquila, [wraithBand, ringOfBasilius]).
 build(medallionOfCourage, [chainmail, sagesMask, blightStone]).
 build(arcaneBoots, [bootsOfSpeed, energyBooster]).
-build(drumOfEndurance, [ringOfRegen, bracer, windLace,
-      recipe(drumOfEndurance)]).
+build(drumOfEndurance, [sagesMask, bracer, windLace, recipe(drumOfEndurance)]).
 build(mekansm, [headdress, buckler, recipe(mekansm)]).
-build(vladimirsOffering, [headdress, ringOfBasilius, morbidMask,
-      recipe(vladimirsOffering)]).
+build(vladimirsOffering, [headdress, ringOfBasilius, morbidMask]).
 build(pipeOfInsight, [hoodOfDefiance, headdress, recipe(pipeOfInsight)]).
 build(guardianGreaves, [arcaneBoots, mekansm, recipe(guardianGreaves)]).
 
@@ -170,9 +168,9 @@ build(dagon2, [dagon1, recipe(dagon2)]).
 build(dagon3, [dagon2, recipe(dagon3)]).
 build(dagon4, [dagon3, recipe(dagon4)]).
 build(dagon5, [dagon4, recipe(dagon5)]).
-build(eulsScepterOfDivinity, [staffOfWizardry, sagesMask, windLace,
+build(eulsScepterOfDivinity, [staffOfWizardry, voidStone, windLace,
       recipe(eulsScepterOfDivinity)]).
-build(solarCrest, [medallionOfCourage, talismanOfCourage]).
+build(solarCrest, [medallionOfCourage, talismanOfEvasion]).
 build(rodOfAtos, [staffOfWizardry, staffOfWizardry, vitalityBooster]).
 build(orchidMalevolence, [oblivionStaff, oblivionStaff,
       recipe(orchidMalevolence)]).
@@ -181,6 +179,23 @@ build(aghanimsScepter, [pointBooster, staffOfWizardry, ogreClub,
 build(refresherOrb, [perseverance, perseverance, recipe(refresherOrb)]).
 build(scytheOfVyse, [mysticStaff, ultimateOrb, voidStone]).
 build(octarineCore, [mysticStaff, soulBooster]).
+
+% Armor
+build(hoodOfDefiance, [ringOfHealth, cloak, ringOfRegen]).
+build(vanguard, [ringOfHealth, vitalityBooster, stoutShield]).
+build(bladeMail, [broadsword, chainmail, robeOfTheMagi]).
+build(soulBooster, [vitalityBooster, energyBooster, pointBooster]).
+build(crimsonGuard, [vanguard, buckler, recipe(crimsonGuard)]).
+build(blackKingBar, [ogreClub, mithrilHammer, recipe(blackKingBar)]).
+build(lotusOrb, [perseverance, platemail, energyBooster]).
+build(shivasGuard, [platemail, mysticStaff, recipe(shivasGuard)]).
+build(bloodstone, [soulRing, soulBooster, recipe(bloodstone)]).
+build(mantaStyle, [yasha, ultimateOrb, recipe(mantaStyle)]).
+build(linkensSphere, [perseverance, ultimateOrb, recipe(linkensSphere)]).
+build(hurricanePike, [forceStaff, dragonLance, recipe(hurricanePike)]).
+build(assaultCuirass, [platemail, hyperstone, chainmail,
+      recipe(assaultCuirass)]).
+build(heartOfTarrasque, [reaver, vitalityBooster, recipe(heartOfTarrasque)]).
 
 % Weapons
 build(crystalys, [broadsword, bladesOfAttack, recipe(crystalys)]).
@@ -199,26 +214,10 @@ build(divineRapier, [sacredRelic, demonEdge]).
 build(abyssalBlade, [skullBasher, vanguard, recipe(abyssalBlade)]).
 build(bloodthorn, [orchidMalevolence, crystalys, recipe(bloodthorn)]).
 
-% Armor
-build(hoodOfDefiance, [ringOfHealth, cloak, ringOfRegen]).
-build(vanguard, [ringOfHealth, vitalityBooster, stoutShield]).
-build(bladeMail, [broadsword, chainmail, robeOfTheMagi]).
-build(soulBooster, [vitalityBooster, energyBooster, pointBooster]).
-build(crimsonGuard, [vanguard, buckler, recipe(crimsonGuard)]).
-build(blackKingBar, [ogreClub, mithrilHammer, recipe(blackKingBar)]).
-build(lotusOrb, [perseverance, platemail, recipe(lotusOrb)]).
-build(shivasGuard, [platemail, mysticStaff, recipe(shivasGuard)]).
-build(bloodstone, [soulRing, soulBooster, recipe(bloodstone)]).
-build(mantaStyle, [yasha, ultimateOrb, recipe(mantaStyle)]).
-build(linkensSphere, [perseverance, ultimateOrb, recipe(linkensSphere)]).
-build(hurricanePike, [forceStaff, dragonLance, recipe(hurricanePike)]).
-build(assaultCuirass, [platemail, hyperstone, chainmail,
-      recipe(assaultCuirass)]).
-build(heartOfTarrasque, [reaver, vitalityBooster, recipe(heartOfTarrasque)]).
-
 % Artifacts
 build(maskOfMadness, [morbidMask, recipe(maskOfMadness)]).
-build(helmOfTheDominator, [morbidMask, helmOfIronWill]).
+build(helmOfTheDominator, [glovesOfHaste, headdress,
+      recipe(helmOfTheDominator)]).
 build(dragonLance, [ogreClub, bandOfElvenskin, bandOfElvenskin]).
 build(sange, [ogreClub, beltOfStrength, recipe(sange)]).
 build(yasha, [bladeOfAlacrity, bandOfElvenskin, recipe(yasha)]).
@@ -226,9 +225,9 @@ build(echoSabre, [ogreClub, oblivionStaff]).
 build(maelstrom, [glovesOfHaste, mithrilHammer, recipe(maelstrom)]).
 build(diffusalBlade, [bladeOfAlacrity, bladeOfAlacrity, robeOfTheMagi,
       recipe(diffusalBlade)]).
-build(desolator, [mithrilHammer, mithrilHammer, recipe(desolator)]).
+build(desolator, [mithrilHammer, mithrilHammer, blightStone]).
 build(heavensHalberd, [sange, talismanOfEvasion]).
 build(sangeAndYasha, [sange, yasha]).
 build(eyeOfSkadi, [ultimateOrb, ultimateOrb, pointBooster, orbOfVenom]).
 build(mjollnir, [hyperstone, maelstrom, recipe(mjollnir)]).
-build(satanic, [reaver, helmOfTheDominator, recipe(satanic)]).
+build(satanic, [morbidMask, mithrilHammer, reaver]).

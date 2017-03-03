@@ -53,3 +53,10 @@ resolve_build([Item| Tail], Out) :-
 
 build_contains(Item, Build) :-
    item(Item), build(Build, Items), member(Item, Items).
+
+verify_builds :-
+   build(B, Items), verify_build_items(B, Items).
+
+verify_build_items(_B, []).
+verify_build_items(B, [Item| Tail]) :-
+   verify_build_items(B, Tail), item(Item), !.
