@@ -24,19 +24,18 @@ item(empty).
 % A placeholder for 'nothing'
 
 % Consumables
+item(townPortalScroll).
 item(clarity).
 item(faerieFire).
-item(enchantedMango).
-item(tango).
-item(healingSalve).
 item(smokeOfDeceit).
-item(townPortalScroll).
-item(dustOfAppearance).
-item(animalCourier).
-item(flyingCourier).
 item(observerWard).
 item(sentryWard).
+item(enchantedMango).
+item(healingSalve).
+item(tango).
 item(tomeOfKnowledge).
+item(dustOfAppearance).
+item(animalCourier).
 item(bottle).
 
 % Attributes
@@ -48,7 +47,7 @@ item(circlet).
 item(beltOfStrength).
 item(bandOfElvenskin).
 item(robeOfTheMagi).
-item(ogreClub).
+item(ogreAxe).
 item(bladeOfAlacrity).
 item(staffOfWizardry).
 
@@ -57,22 +56,22 @@ item(ringOfProtection).
 item(stoutShield).
 item(quellingBlade).
 item(infusedRaindrop).
-item(blightStone).
 item(orbOfVenom).
+item(blightStone).
 item(bladesOfAttack).
 item(chainmail).
 item(quarterstaff).
 item(helmOfIronWill).
+item(javelin).
 item(broadsword).
 item(claymore).
-item(javelin).
 item(mithrilHammer).
 
 % Arcane
-item(windLace).
 item(magicStick).
-item(sagesMask).
+item(windLace).
 item(ringOfRegen).
+item(sagesMask).
 item(bootsOfSpeed).
 item(glovesOfHaste).
 item(cloak).
@@ -121,12 +120,12 @@ build_contains_recipe2(X, [_H| T]) :-
 build(wards, [observerWard, sentryWard]).
 
 % Common
-build(magicWand, [magicStick, ironBranch, ironBranch, circlet]).
+build(magicWand, [magicStick, ironBranch, ironBranch, enchantedMango]).
 build(nullTalisman, [circlet, mantleOfIntelligence, recipe(nullTalisman)]).
 build(wraithBand, [circlet, slippersOfAgility, recipe(wraithBand)]).
-build(poorMansShield, [slippersOfAgility, slippersOfAgility, stoutShield]).
 build(bracer, [circlet, gauntletsOfStrength, recipe(bracer)]).
-build(soulRing, [ringOfRegen, sagesMask, recipe(soulRing)]).
+build(soulRing, [ringOfRegen, gauntletsOfStrength, gauntletsOfStrength,
+      recipe(soulRing)]).
 build(phaseBoots, [bootsOfSpeed, bladesOfAttack, bladesOfAttack]).
 build(powerTreads, [glovesOfHaste, bootsOfSpeed, beltOfStrength]).
 build(powerTreads, [glovesOfHaste, bootsOfSpeed, bandOfElvenskin]).
@@ -139,30 +138,33 @@ build(moonShard, [hyperstone, hyperstone]).
 
 % Support
 build(ringOfBasilius, [sagesMask, ringOfProtection]).
-build(ironTalon, [quellingBlade, ringOfProtection, recipe(ironTalon)]).
 build(headdress, [ringOfRegen, ironBranch, recipe(headdress)]).
 build(buckler, [chainmail, ironBranch, recipe(buckler)]).
-build(urnOfShadows, [gauntletsOfStrength, gauntletsOfStrength, sagesMask,
+build(urnOfShadows, [infusedRaindrop, circlet, ringOfProtection,
       recipe(urnOfShadows)]).
-build(tranquilBoots, [bootsOfSpeed, ringOfProtection, ringOfRegen]).
+build(tranquilBoots, [bootsOfSpeed, windLace, ringOfRegen]).
 build(ringOfAquila, [wraithBand, ringOfBasilius]).
 build(medallionOfCourage, [chainmail, sagesMask, blightStone]).
 build(arcaneBoots, [bootsOfSpeed, energyBooster]).
-build(drumOfEndurance, [sagesMask, bracer, windLace, recipe(drumOfEndurance)]).
-build(mekansm, [headdress, buckler, recipe(mekansm)]).
+%build(drumOfEndurane, [sagesMask, bracer, windLace, recipe(drumOfEndurance)]).
 build(vladimirsOffering, [headdress, ringOfBasilius, morbidMask]).
+build(mekansm, [headdress, buckler, recipe(mekansm)]).
+build(spiritVessel, [urnOfShadows, vitalityBooster, windLace,
+      recipe(spiritVessel)]).
 build(pipeOfInsight, [hoodOfDefiance, headdress, recipe(pipeOfInsight)]).
-build(guardianGreaves, [arcaneBoots, mekansm, recipe(guardianGreaves)]).
+build(guardianGreaves, [mekansm, arcaneBoots, recipe(guardianGreaves)]).
 
 % Caster
 build(glimmerCape, [shadowAmulet, cloak]).
-build(forceStaff, [staffOfWizardry, ringOfRegen, recipe(forceStaff)]).
 build(veilOfDiscord, [helmOfIronWill, nullTalisman, nullTalisman,
       recipe(veilOfDiscord)]).
-build(aetherLens, [energyBooster, ringOfHealth, recipe(aetherLens)]).
-build(necronomicon1, [staffOfWizardry, beltOfStrength, recipe(necronomicon1)]).
+build(aetherLens, [energyBooster, voidStone, recipe(aetherLens)]).
+build(forceStaff, [staffOfWizardry, ringOfHealth, recipe(forceStaff)]).
+build(necronomicon1, [nullTalisman, nullTalisman, beltOfStrength,
+      recipe(necronomicon1)]).
 build(necronomicon2, [necronomicon1, recipe(necronomicon2)]).
 build(necronomicon3, [necronomicon2, recipe(necronomicon3)]).
+build(solarCrest, [medallionOfCourage, talismanOfEvasion]).
 build(dagon1, [staffOfWizardry, nullTalisman, recipe(dagon1)]).
 build(dagon2, [dagon1, recipe(dagon2)]).
 build(dagon3, [dagon2, recipe(dagon3)]).
@@ -170,12 +172,12 @@ build(dagon4, [dagon3, recipe(dagon4)]).
 build(dagon5, [dagon4, recipe(dagon5)]).
 build(eulsScepterOfDivinity, [staffOfWizardry, voidStone, windLace,
       recipe(eulsScepterOfDivinity)]).
-build(solarCrest, [medallionOfCourage, talismanOfEvasion]).
-build(rodOfAtos, [staffOfWizardry, staffOfWizardry, vitalityBooster]).
+build(rodOfAtos, [staffOfWizardry, bracer, bracer, recipe(rodOfAtos)]).
 build(orchidMalevolence, [oblivionStaff, oblivionStaff,
       recipe(orchidMalevolence)]).
-build(aghanimsScepter, [pointBooster, staffOfWizardry, ogreClub,
+build(aghanimsScepter, [pointBooster, staffOfWizardry, ogreAxe,
       bladeOfAlacrity]).
+build(nullifier, [sacredRelic, helmOfIronWill]).
 build(refresherOrb, [perseverance, perseverance, recipe(refresherOrb)]).
 build(scytheOfVyse, [mysticStaff, ultimateOrb, voidStone]).
 build(octarineCore, [mysticStaff, soulBooster]).
@@ -186,48 +188,174 @@ build(vanguard, [ringOfHealth, vitalityBooster, stoutShield]).
 build(bladeMail, [broadsword, chainmail, robeOfTheMagi]).
 build(soulBooster, [vitalityBooster, energyBooster, pointBooster]).
 build(crimsonGuard, [vanguard, buckler, recipe(crimsonGuard)]).
-build(blackKingBar, [ogreClub, mithrilHammer, recipe(blackKingBar)]).
+build(aeonDisk, [vitalityBooster, energyBooster, recipe(aeonDisk)]).
+build(blackKingBar, [ogreAxe, mithrilHammer, recipe(blackKingBar)]).
 build(lotusOrb, [perseverance, platemail, energyBooster]).
 build(shivasGuard, [platemail, mysticStaff, recipe(shivasGuard)]).
-build(bloodstone, [soulRing, soulBooster, recipe(bloodstone)]).
-build(mantaStyle, [yasha, ultimateOrb, recipe(mantaStyle)]).
+build(hurricanePike, [wraithBand, forceStaff, dragonLance]).
 build(linkensSphere, [perseverance, ultimateOrb, recipe(linkensSphere)]).
-build(hurricanePike, [forceStaff, dragonLance, recipe(hurricanePike)]).
+build(bloodstone, [perseverance, soulBooster]).
+build(mantaStyle, [yasha, ultimateOrb, recipe(mantaStyle)]).
+build(heartOfTarrasque, [reaver, vitalityBooster, vitalityBooster]).
 build(assaultCuirass, [platemail, hyperstone, chainmail,
       recipe(assaultCuirass)]).
-build(heartOfTarrasque, [reaver, vitalityBooster, recipe(heartOfTarrasque)]).
 
 % Weapons
 build(crystalys, [broadsword, bladesOfAttack, recipe(crystalys)]).
 build(armletOfMordiggian, [helmOfIronWill, glovesOfHaste, bladesOfAttack,
       recipe(armletOfMordiggian)]).
+build(meteorHammer, [ogreAxe, staffOfWizardry, ringOfRegen, sagesMask]).
 build(shadowBlade, [shadowAmulet, claymore]).
 build(skullBasher, [beltOfStrength, javelin, recipe(skullBasher)]).
-build(battleFury, [perseverance, claymore, broadsword, quellingBlade]).
+build(battleFury, [demonEdge, perseverance, quellingBlade]).
+build(monkeyKingBar, [hyperstone, javelin, javelin]).
 build(etherealBlade, [eaglesong, ghostScepter]).
-build(silverEdge, [shadowBlade, ultimateOrb, recipe(silverEdge)]).
 build(radiance, [sacredRelic, recipe(radiance)]).
-build(monkeyKingBar, [demonEdge, javelin, javelin]).
 build(daedalus, [crystalys, demonEdge, recipe(daedalus)]).
 build(butterfly, [talismanOfEvasion, quarterstaff, eaglesong]).
+build(silverEdge, [shadowBlade, ultimateOrb, recipe(silverEdge)]).
 build(divineRapier, [sacredRelic, demonEdge]).
 build(abyssalBlade, [skullBasher, vanguard, recipe(abyssalBlade)]).
 build(bloodthorn, [orchidMalevolence, crystalys, recipe(bloodthorn)]).
 
 % Artifacts
-build(maskOfMadness, [morbidMask, recipe(maskOfMadness)]).
-build(helmOfTheDominator, [glovesOfHaste, headdress,
-      recipe(helmOfTheDominator)]).
-build(dragonLance, [ogreClub, bandOfElvenskin, bandOfElvenskin]).
-build(sange, [ogreClub, beltOfStrength, recipe(sange)]).
+build(dragonLance, [ogreAxe, bandOfElvenskin, bandOfElvenskin]).
+build(sange, [ogreAxe, beltOfStrength, recipe(sange)]).
 build(yasha, [bladeOfAlacrity, bandOfElvenskin, recipe(yasha)]).
-build(echoSabre, [ogreClub, oblivionStaff]).
+build(kaya, [staffOfWizardry, robeOfTheMagi, recipe(kaya)]).
+build(maskOfMadness, [morbidMask, quarterstaff]).
+build(helmOfTheDominator, [glovesOfHaste, headdress, ringOfHealth]).
+build(echoSabre, [ogreAxe, oblivionStaff]).
 build(maelstrom, [glovesOfHaste, mithrilHammer, recipe(maelstrom)]).
 build(diffusalBlade, [bladeOfAlacrity, bladeOfAlacrity, robeOfTheMagi,
       recipe(diffusalBlade)]).
-build(desolator, [mithrilHammer, mithrilHammer, blightStone]).
 build(heavensHalberd, [sange, talismanOfEvasion]).
+build(desolator, [mithrilHammer, mithrilHammer, blightStone]).
 build(sangeAndYasha, [sange, yasha]).
-build(eyeOfSkadi, [ultimateOrb, ultimateOrb, pointBooster, orbOfVenom]).
+build(eyeOfSkadi, [ultimateOrb, ultimateOrb, pointBooster]).
+build(satanic, [morbidMask, claymore, reaver]).
 build(mjollnir, [hyperstone, maelstrom, recipe(mjollnir)]).
-build(satanic, [morbidMask, mithrilHammer, reaver]).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Prices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+price(empty, 0).
+
+% Consumables
+price(townPortalScroll, 50).
+price(clarity, 50).
+price(faerieFire, 70).
+price(smokeOfDeceit, 80).
+price(observerWard, 80).
+price(sentryWard, 100).
+price(enchantedMango, 100).
+price(healingSalve, 110).
+price(tango, 90).
+price(tomeOfKnowledge, 150).
+price(dustOfAppearance, 180).
+price(animalCourier, 50).
+price(bottle, 650).
+
+price(ironBranch, 50).
+price(gauntletsOfStrength, 135).
+price(slippersOfAgility, 135).
+price(mantleOfIntelligence, 135).
+price(circlet, 165).
+price(beltOfStrength, 450).
+price(bandOfElvenskin, 450).
+price(robeOfTheMagi, 450).
+price(ogreAxe, 1000).
+price(bladeOfAlacrity, 1000).
+price(staffOfWizardry, 1000).
+
+price(ringOfProtection, 175).
+price(stoutShield, 200).
+price(quellingBlade, 200).
+price(infusedRaindrop, 225).
+price(orbOfVenom, 275).
+price(blightStone, 300).
+price(bladesOfAttack, 420).
+price(chainmail, 550).
+price(quarterstaff, 875).
+price(helmOfIronWill, 900).
+price(javelin, 1100).
+price(broadsword, 1200).
+price(claymore, 1400).
+price(mithrilHammer, 1600).
+
+price(magicStick, 200).
+price(windLace, 250).
+price(ringOfRegen, 300).
+price(sagesMask, 325).
+price(bootsOfSpeed, 400).
+price(glovesOfHaste, 500).
+price(cloak, 550).
+price(ringOfHealth, 850).
+price(voidStone, 850).
+price(gemOfTrueSight, 900).
+price(morbidMask, 1100).
+price(shadowAmulet, 1300).
+price(ghostScepter, 1500).
+price(blinkDagger, 2250).
+
+price(energyBooster, 900).
+price(vitalityBooster, 1100).
+price(pointBooster, 1200).
+price(platemail, 1400).
+price(talismanOfEvasion, 1450).
+price(hyperstone, 2000).
+price(ultimateOrb, 2150).
+price(demonEdge, 2200).
+price(mysticStaff, 2700).
+price(reaver, 3000).
+price(eaglesong, 3200).
+price(sacredRelic, 3800).
+
+% Recipes
+price(recipe(nullTalisman), 165).
+price(recipe(wraithBand), 165).
+price(recipe(bracer), 165).
+price(recipe(soulRing), 200).
+price(recipe(handOfMidas), 1650).
+price(recipe(bootsOfTravel), 2000).
+price(recipe(headdress), 300).
+price(recipe(buckler), 200).
+price(recipe(urnOfShadows), 310).
+price(recipe(mekansm), 900).
+price(recipe(spiritVessel), 750).
+price(recipe(pipeOfInsight), 800).
+price(recipe(guardianGreaves), 1700).
+price(recipe(veilOfDiscord), 500).
+price(recipe(aetherLens), 600).
+price(recipe(forceStaff), 400).
+price(recipe(necronomicon1), 1300).
+price(recipe(necronomicon2), 1300).
+price(recipe(necronomicon3), 1300).
+price(recipe(dagon1), 1250).
+price(recipe(dagon2), 1250).
+price(recipe(dagon3), 1250).
+price(recipe(dagon4), 1250).
+price(recipe(dagon5), 1250).
+price(recipe(eulsScepterOfDivinity), 650).
+price(recipe(rodOfAtos), 1100).
+price(recipe(orchidMalevolence), 775).
+price(recipe(refresherOrb), 1800).
+price(recipe(crimsonGuard), 600).
+price(recipe(aeonDisk), 1350).
+price(recipe(blackKingBar), 1375).
+price(recipe(shivasGuard), 650).
+price(recipe(linkensSphere), 1200).
+price(recipe(mantaStyle), 900).
+price(recipe(assaultCuirass), 1300).
+price(recipe(crystalys), 500).
+price(recipe(armletOfMordiggian), 550).
+price(recipe(skullBasher), 1150).
+price(recipe(radiance), 1350).
+price(recipe(daedalus), 1000).
+price(recipe(silverEdge), 700).
+price(recipe(abyssalBlade), 1550).
+price(recipe(bloodthorn), 1000).
+price(recipe(sange), 500).
+price(recipe(yasha), 500).
+price(recipe(kaya), 500).
+price(recipe(maelstrom), 700).
+price(recipe(diffusalBlade), 700).
+price(recipe(mjollnir), 900).

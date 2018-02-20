@@ -55,8 +55,29 @@ build_contains(Item, Build) :-
    item(Item), build(Build, Items), member(Item, Items).
 
 verify_builds :-
-   build(B, Items), verify_build_items(B, Items).
+   \+ verify_builds2.
+
+verify_builds2 :-
+   build(B, Items), \+ verify_build_items(B, Items),
+   write('Failed: build "'), write(B), write('"'), nl.
 
 verify_build_items(_B, []).
 verify_build_items(B, [Item| Tail]) :-
    verify_build_items(B, Tail), item(Item), !.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
