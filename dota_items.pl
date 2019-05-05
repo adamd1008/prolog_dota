@@ -131,7 +131,7 @@ build(soulRing, [ringOfRegen, gauntletsOfStrength, gauntletsOfStrength,
 build(powerTreads, [glovesOfHaste, bootsOfSpeed, beltOfStrength]).
 build(powerTreads, [glovesOfHaste, bootsOfSpeed, bandOfElvenskin]).
 build(powerTreads, [glovesOfHaste, bootsOfSpeed, robeOfTheMagi]).
-build(phaseBoots, [bootsOfSpeed, chainmail, glovesOfHaste]).
+build(phaseBoots, [bootsOfSpeed, chainmail, bladesOfAttack]).
 build(oblivionStaff, [quarterstaff, sagesMask, robeOfTheMagi]).
 build(perseverance, [ringOfHealth, voidStone]).
 build(maskOfMadness, [morbidMask, quarterstaff]).
@@ -150,7 +150,8 @@ build(tranquilBoots, [bootsOfSpeed, windLace, ringOfRegen]).
 build(medallionOfCourage, [chainmail, sagesMask, blightStone]).
 build(arcaneBoots, [bootsOfSpeed, energyBooster]).
 build(drumOfEndurance, [sagesMask, crown, windLace, recipe(drumOfEndurance)]).
-build(vladimirsOffering, [headdress, ringOfBasilius, morbidMask]).
+build(vladimirsOffering, [ringOfBasilius, morbidMask,
+      recipe(vladimirsOffering)]).
 build(mekansm, [headdress, buckler, recipe(mekansm)]).
 build(holyLocket, [ringOfTarrasque, voidStone, cloak, recipe(holyLocket)]).
 build(spiritVessel, [urnOfShadows, vitalityBooster, windLace,
